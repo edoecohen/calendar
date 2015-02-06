@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="calendarDemoApp">
+<head>
+<title>Calendar Directive Challenge</title>
+<link rel="stylesheet" type="text/css" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="./main.css" />
+<link rel="icon" href="favicon.png">
+</head>
+<body ng-controller="MainCtrl">
+
+<!-- your code for nav and calendar directive instance here -->
+
+	<header>
+		<nav class="navbar navbar-inverse navbar-static-top">
+			<div class="container">
+				<div class="navbar-header">
+					<select class="form-control" ng-model="selectedMonth" ng-options="month as month.label for month in months" ng-change="getRange()">
+					</select>
+					<select class="form-control" ng-model="selectedYear" ng-options="year for year in years" ng-change="getRange()">
+						<option ng-repeat="year in years" value="{{year}}">{{year}}</option>
+					</select>
+				</div>
+			</div>
+
+		</nav>
+
+	</header>
+
+
+	<main>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h1>{{selectedMonth.label}}, {{selectedYear}}</h1>
+					<!--a href="" ng-click="getRange()">Test Button</a-->
+					<ul>
+						<li ng-repeat="date in range.days" ng-class="{other: {{date.month}} !== {{selectedMonth.value}}}">{{date.day}}</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</main>
+
+
+<script type="text/javascript" src="./bower_components/angular/angular.js"></script>
+<script type="text/javascript" src="./utilities/calendarRange.js"></script>
+<script type="text/javascript" src="./app.js"></script>
+</body>
+</html>

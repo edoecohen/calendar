@@ -1,0 +1,22 @@
+.form-control {
+	width: 160px;
+	display: inline-block;
+	margin: 8px 15px 0 0;
+}
+.other {
+	background: #EAEAEA;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+	margin-top: 20px;
+	border: 1px solid black;
+}
+li {
+	width: 14.2857%;
+	height: 110px;
+	border: 1px solid black;
+	display: inline-block;
+	padding: 10px 0 0 15px;
+}
